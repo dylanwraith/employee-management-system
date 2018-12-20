@@ -1,0 +1,22 @@
+﻿<Page
+    x:Class="COMPE361_Project.ManageEmployees"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:COMPE361_Project"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid>
+        <Image Source="Assets/background2.jpg" Stretch="UniformToFill"/>
+        <SplitView DisplayMode="Inline" IsPaneOpen="True">
+            <SplitView.Pane>
+                <ListView Name="Employees" Background="White">
+                    <ListViewHeaderItem Content="Employees"/>
+                </ListView>
+            </SplitView.Pane>
+            
+        </SplitView>
+    </Grid>
+</Page>

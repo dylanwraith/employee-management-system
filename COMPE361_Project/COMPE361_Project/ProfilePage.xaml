@@ -1,0 +1,17 @@
+﻿<Page
+    x:Class="COMPE361_Project.ProfilePage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:COMPE361_Project"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    <Grid>
+        <Image Source="Assets/background2.jpg" Stretch="UniformToFill"/>
+        <RelativePanel Background="White" Margin="275,200,275,200">
+            <TextBlock Name="Welcome" FontSize="52" RelativePanel.AlignHorizontalCenterWithPanel="True" RelativePanel.AlignVerticalCenterWithPanel="True"/>
+            <TextBlock Name="Position" FontSize="36" RelativePanel.Below="Welcome" RelativePanel.AlignHorizontalCenterWithPanel="True"/>
+        </RelativePanel>
+    </Grid>
+</Page>

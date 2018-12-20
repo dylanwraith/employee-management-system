@@ -1,0 +1,33 @@
+﻿<Page
+    x:Class="COMPE361_Project.ClockLogs"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:COMPE361_Project"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid>
+        <Image Source="Assets/background2.jpg" Stretch="UniformToFill"/>
+        <SplitView DisplayMode="Inline" IsPaneOpen="True">
+            <SplitView.Pane>
+                <ListView Name="EmployeeEmailList" HorizontalAlignment="Stretch" Margin="2,0,-2,0" VerticalAlignment="Stretch" IsItemClickEnabled="True" ItemClick="EmployeeEmailList_ItemClick">
+                    <ListViewHeaderItem Content="Employees"/>
+                </ListView>
+            </SplitView.Pane>
+        </SplitView>
+        <ListView Name="ClockInList" Background="White" Margin="1176,2,0,0" SelectionMode="None" IsItemClickEnabled="False">
+            <ListViewHeaderItem Content="ClockInList"/>
+        </ListView>
+        <ListView Name="ClockOutList" Background="White" Margin="917,0,320,0" SelectionMode="None" IsItemClickEnabled="False" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+            <ListViewHeaderItem Content="ClockOutList"/>
+        </ListView>
+        <ListView Name="LunchInList" Background="White" Margin="611,2,583,0" SelectionMode="None" IsItemClickEnabled="False" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+            <ListViewHeaderItem Content="LunchInList"/>
+        </ListView>
+        <ListView Name="LunchOutList" Background="White" Margin="321,0,889,0" SelectionMode="None" IsItemClickEnabled="False">
+            <ListViewHeaderItem Content="LunchOutList"/>
+        </ListView>
+    </Grid>
+</Page>

@@ -1,0 +1,15 @@
+﻿<Page
+    x:Class="COMPE361_Project.ViewSchedule"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:COMPE361_Project"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    <Grid>
+        <ListView Name="EmployeeSchedule" HorizontalAlignment="Center" Height="718" VerticalAlignment="Top" Width="1236" Margin="0,166,0,0" SelectionMode="None" IsItemClickEnabled="False" Background="White">
+        </ListView>
+        <TextBox x:Name="ScheduleTitle" Background="White" Text="Schedule" Margin="105,35,625,886" IsReadOnly="True" TextAlignment="Center" FontSize="48"/>
+    </Grid>
+</Page>

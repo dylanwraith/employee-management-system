@@ -1,0 +1,61 @@
+﻿<Page
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:COMPE361_Project"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:Custom="using:Microsoft.Toolkit.Uwp.UI.Controls"
+    x:Class="COMPE361_Project.EmployeeList"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="497*"/>
+            <ColumnDefinition Width="3*"/>
+        </Grid.ColumnDefinitions>
+
+        <SplitView DisplayMode="Inline" PanePlacement="Right" IsPaneOpen="True" Margin="-10,10,10,0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+            <SplitView.Pane>
+
+                <ListView Name="Employees" Background="White" SelectionChanged="Employees_SelectionChanged" SelectionMode="None" IsItemClickEnabled="False" HorizontalAlignment="Left" Width="323" Margin="0,4,0,10" VerticalAlignment="Stretch">
+                    <ListViewHeaderItem Content="Employees" Margin="0,0,0,0" Height="54" Width="157" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
+                </ListView>
+            </SplitView.Pane>
+            <SplitView.Content>
+
+                <Grid Margin="10,0,-330,10">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto" MinWidth="244" />
+                        <ColumnDefinition />
+                    </Grid.ColumnDefinitions>
+                    <Button x:Name="SaveButton" Content="&#xD;&#xA;Add Employee&#xD;&#xA;" VerticalAlignment="Top" Margin="0,8,0,0" Click="SaveButton_Click" HorizontalAlignment="Center" Height="52" Width="161"/>
+                    <TextBox x:Name="Username" IsReadOnly="False" HorizontalAlignment="Left" Text="" VerticalAlignment="Top" Margin="174,352,0,0" Grid.Column="1" Height="32" Width="274" TextChanged="Username_TextChanged"/>
+                    <TextBlock x:Name="First" Grid.Column="1" HorizontalAlignment="Left" Margin="45,17,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="40" Width="75"><Run Text="First Name:"/><LineBreak/><Run/></TextBlock>
+                    <TextBlock x:Name="Email" Grid.Column="1" HorizontalAlignment="Left" Margin="45,356,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="24" Width="107"><Run Text="Email Address:"/><LineBreak/><Run/></TextBlock>
+                    <TextBlock x:Name="Type"  Grid.Column="1" HorizontalAlignment="Left" Margin="45,272,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="40" Width="103" SelectionChanged="Type_SelectionChanged"><Run Text="Employee Type:"/><LineBreak/><Run/></TextBlock>
+                    <TextBlock x:Name="Last" Grid.Column="1" HorizontalAlignment="Left" Margin="44,82,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="40" Width="73"><Run Text="Last Name:"/><LineBreak/><Run/></TextBlock>
+                    <TextBlock x:Name="Number" Grid.Column="1" HorizontalAlignment="Left" Margin="44,149,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="40" Width="104" SelectionChanged="TextBlock_SelectionChanged_1"><Run Text="Phone Number:"/><LineBreak/><Run/></TextBlock>
+                    <TextBlock x:Name="Address1" Grid.Column="1" HorizontalAlignment="Left" Margin="44,194,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="73" Height="40"><Run Text="Address:"/><LineBreak/><Run/></TextBlock>
+                    <TextBox x:Name="FirstName" Grid.Column="1" HorizontalAlignment="Left" Margin="173,13,0,0" Text="" VerticalAlignment="Top" Width="137" Height="32" TextChanged="TextBox_TextChanged"/>
+                    <TextBox x:Name="LastName" Grid.Column="1" HorizontalAlignment="Left" Margin="173,79,0,0" Text="" VerticalAlignment="Top" Width="137" Height="32"/>
+                    <TextBox x:Name="PhoneNumber" Grid.Column="1" HorizontalAlignment="Left" Margin="173,145,0,0" Text="" VerticalAlignment="Top" Width="137" Height="32"/>
+                    <TextBox x:Name="Address" Grid.Column="1" HorizontalAlignment="Left" Margin="173,185,0,0" Text="" VerticalAlignment="Top" Width="Auto" Height="49"/>
+                    <TextBox x:Name="EmpType" Visibility="Collapsed" Grid.Column="1" HorizontalAlignment="Left" Margin="173,267,0,0" Text="" VerticalAlignment="Top" Width="137" Height="32"/>
+                    <Button x:Name="LoadButton" Visibility="Collapsed" Content="&#xD;&#xA;Load Employee Info&#xD;&#xA;" VerticalAlignment="Top" Margin="0,68,0,0" Click="LoadButton_Click" HorizontalAlignment="Center" Height="52" Width="159"/>
+                    <TextBlock x:Name="FirstNameText" Grid.Column="1" HorizontalAlignment="Left" Margin="45,17,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="40" Width="75"><Run Text="First Name:"/><LineBreak/><Run/></TextBlock>
+                    <TextBox x:Name="TestStatus" Visibility="Collapsed" IsReadOnly="True" HorizontalAlignment="Center" Margin="0,207,0,0" Text="" VerticalAlignment="Top" Width="Auto" Height="48"/>
+                    <Button x:Name="UpdateButton" Content="&#xD;&#xA;Update&#xD;&#xA;" VerticalAlignment="Top" Margin="0,128,0,0" Click="UpdateButton_Click" HorizontalAlignment="Center" Height="52" Width="159"/>
+                    <CheckBox Grid.Column="1" Name="AdminCheck" Click="AdminClick" Content="Admin" Margin="200,307,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Height="31" Width="89"/>
+                    <CheckBox Grid.Column="1" Name="ManagerCheck" Click="ManagerClick" Content="Manager" Margin="358,307,0,0" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                    <CheckBox Grid.Column="1" Name="EmployeeCheck" Click="EmployeeClick" Content="Employee" HorizontalAlignment="Left" Margin="46,307,0,0" VerticalAlignment="Top" Width="102"/>
+                    <ListView
+                        Name="EmployeeEmails" Background="White" ItemClick="Employees_ItemClick" SelectionMode="Single" IsItemClickEnabled="True" Grid.Column="1" Margin="568,0,346,10">
+                        <ListViewHeaderItem Content="   Select To Edit" HorizontalAlignment="Stretch" Margin="0,0,0,0" VerticalAlignment="Stretch" Width="181"/>
+                    </ListView>
+                    <Button x:Name="RemoveButton" Content="&#xD;&#xA;Remove&#xA;" VerticalAlignment="Top" Margin="44,514,0,0" Click="RemoveButton_Click" HorizontalAlignment="Left" Height="52" Width="159" Grid.Column="1"/>
+                </Grid>
+            </SplitView.Content>
+        </SplitView>
+    </Grid>
+</Page>
